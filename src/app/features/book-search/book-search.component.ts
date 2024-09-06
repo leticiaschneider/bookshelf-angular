@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { BookService } from '../../shared/services/book.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-book-search',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, HttpClientModule],
   templateUrl: './book-search.component.html',
   styleUrls: ['./book-search.component.scss']
 })
