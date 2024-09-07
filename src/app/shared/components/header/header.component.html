@@ -1,0 +1,21 @@
+<header class="flex justify-around items-center py-2 shadow-lg">
+    <div class="w-40">
+        <img src="assets/images/logo.png" alt="Logo" />
+    </div>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar livros..." aria-label="Search" class="px-3 py-1 border rounded-md" />
+    </div>
+
+    <nav class="hidden sm:ml-6 sm:block">
+        <div class="flex space-x-4">
+            <a routerLink="/"
+                class="relative nav-item before:absolute before:-bottom-4 before:left-0 before:w-0 before:h-[2px] before:bg-blue-500 before:transition-all before:duration-300 hover:before:w-full">Home</a>
+            <a routerLink="/library"
+                class="relative nav-item before:absolute before:-bottom-4 before:left-0 before:w-0 before:h-[2px] before:bg-blue-500 before:transition-all before:duration-300 hover:before:w-full">My
+                Library</a>
+            <a routerLink="/wishlist"
+                class="relative nav-item before:absolute before:-bottom-4 before:left-0 before:w-0 before:h-[2px] before:bg-blue-500 before:transition-all before:duration-300 hover:before:w-full">Wishlist</a>
+        </div>
+    </nav>
+</header>

@@ -1,12 +1,12 @@
-<header>
-    <nav>
-        <a href="/home">Go to Home</a>
-        <a [routerLink]="['/home']">Home</a>
-      </nav>
-</header>
-<section>
-    <router-outlet></router-outlet>
-</section>
-<footer>
+<!-- header component -->
+<app-header></app-header>
 
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<footer class="bg-white py-5 shadow-xl">
+    <div class="flex justify-center">
+        <p>&copy; 2024. All rights reserved.</p>
+    </div>
 </footer>
