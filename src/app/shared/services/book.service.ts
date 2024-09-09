@@ -17,6 +17,11 @@ export class BookService {
     return this.http.get(url);
   }
 
+  getBooks(query: string): Observable<any> {
+    const url = `${this.apiUrl}?q=${query}&key=${this.apiKey}&maxResults=10`;
+    return this.http.get(url);
+  }
+
   getBookById(id: string): Observable<any> {
     const url = `${this.apiUrl}/${id}?key=${this.apiKey}`;
     return this.http.get(url);

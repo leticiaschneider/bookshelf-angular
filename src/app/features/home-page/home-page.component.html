@@ -1,1 +1,10 @@
-<p>home-page works!</p>
+<div *ngFor="let category of categories" class="category-section">
+    <h2 class="text-xl font-semibold my-4">{{ category.name }}</h2>
+    <div class="book-list grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div *ngFor="let book of booksByCategory[category.name]" class="book-item">
+            <img [src]="book.volumeInfo.imageLinks?.thumbnail" alt="{{ book.volumeInfo.title }}"
+                class="book-cover w-full" />
+            <h3 class="book-title mt-2 text-center">{{ book.volumeInfo.title }}</h3>
+        </div>
+    </div>
+</div>
