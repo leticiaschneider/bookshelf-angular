@@ -1,15 +1,17 @@
-<div *ngFor="let category of categories" class="category-section py-3">
-    
-    <div class="flex justify-between items-center">
+<div *ngFor="let category of categories" class="category-section my-12">
+
+    <div class="flex justify-between items-center px-5">
         <h2 class="text-xl font-semibold my-4">{{ category.name }}</h2>
         <a>Ver mais</a>
     </div>
-    
-    <div class="book-list grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        <div *ngFor="let book of booksByCategory[category.name]" class="book-item">
-            <img [src]="book.volumeInfo.imageLinks?.thumbnail || 'assets/images/default-cover.png'" alt="{{ book.volumeInfo.title }}"
-                class="book-cover w-full" />
+
+    <div class="book-list grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 gap-y-6 justify-items-center">
+        <div *ngFor="let book of booksByCategory[category.name]"
+            class="book-item flex flex-col items-center justify-between h-full">
+            <img [src]="book.volumeInfo.imageLinks?.thumbnail || 'assets/images/default-cover.png'"
+                alt="{{ book.volumeInfo.title }}" class="book-cover w-48 h-64 object-cover shadow-lg" />
             <h3 class="book-title mt-2 text-center">{{ book.volumeInfo.title }}</h3>
         </div>
     </div>
+
 </div>
