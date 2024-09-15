@@ -19,6 +19,9 @@ export class HomePageComponent {
 
   booksByCategory: { [key: string]: any[] } = {};
 
+  dropdownOpen = false;
+  dropdownOptions = ['Read', 'Reading', 'Want to Read', 'Rereading', 'Abandoned', 'Wishlist'];
+
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
@@ -27,5 +30,21 @@ export class HomePageComponent {
         this.booksByCategory[category.name] = data.items || [];
       });
     });
+  }
+
+  toggleDropdown(event: MouseEvent) {
+    event.stopPropagation();
+    this.dropdownOpen = !this.dropdownOpen;
+    document.addEventListener('click', this.closeDropdown);
+  }
+
+  closeDropdown = () => {
+    this.dropdownOpen = false;
+    document.removeEventListener('click', this.closeDropdown);
+  }
+
+  selectOption(option: string) {
+    console.log('Selected:', option);
+    this.dropdownOpen = false;
   }
 }
