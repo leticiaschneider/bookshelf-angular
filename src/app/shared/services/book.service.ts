@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -10,9 +10,13 @@ export class BookService {
   private apiKey = environment.googleBooksApiKey;
   private apiUrl = 'https://www.googleapis.com/books/v1/volumes';
 
+  private searchQuerySubject = new BehaviorSubject<string>('');
+  searchQuery$ = this.searchQuerySubject.asObservable();
+
   constructor(private http: HttpClient) { }
 
   searchBooks(query: string): Observable<any> {
+    this.searchQuerySubject.next(query); // Atualiza a palavra pesquisada
     const url = `${this.apiUrl}?q=${query}&key=${this.apiKey}`;
     return this.http.get(url);
   }
