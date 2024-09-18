@@ -3,12 +3,14 @@ import { BookService } from '../../shared/services/book.service';
 import { debounceTime, distinctUntilChanged, Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { CategoryListComponent } from './components/category-list/category-list.component';
+import { BookItemComponent } from './components/book-item/book-item.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
   templateUrl: './home-page.component.html',
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, CategoryListComponent, BookItemComponent],
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit, OnDestroy {

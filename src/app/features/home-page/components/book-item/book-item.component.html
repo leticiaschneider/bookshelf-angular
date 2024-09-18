@@ -1,0 +1,21 @@
+<div class="book-item flex flex-col items-center justify-between h-full">
+    <img [src]="book.volumeInfo.imageLinks?.thumbnail || 'assets/images/default-cover.png'"
+        alt="{{ book.volumeInfo.title }}" class="book-cover w-48 h-64 object-cover shadow-lg" />
+    <h3 class="book-title mt-2 w-48 text-center">{{ book.volumeInfo.title }}</h3>
+
+    <div class="relative">
+        <button (click)="toggleDropdown($event)"
+            class="bg-blue-400 w-48 p-3 mt-2 text-center rounded-xl text-blue-800 hover:bg-blue-500 cursor-pointer hover:text-blue-200">
+            Add Book
+        </button>
+        <div *ngIf="dropdownOpen"
+            class="absolute right-0 bg-white border border-gray-300 rounded-lg shadow-lg w-full z-10">
+            <ul class="py-1">
+                <li *ngFor="let option of dropdownOptions" (click)="selectOption(option)"
+                    class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    {{ option }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
