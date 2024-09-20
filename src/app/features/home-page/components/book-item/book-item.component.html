@@ -6,7 +6,7 @@
     <div class="relative">
         <button (click)="toggleDropdown($event)"
             class="bg-blue-400 w-48 p-3 mt-2 text-center rounded-xl text-blue-800 hover:bg-blue-500 cursor-pointer hover:text-blue-200">
-            Add Book
+            {{ selectedOption ? selectedOption : 'Add Book' }}
         </button>
         <div *ngIf="dropdownOpen"
             class="absolute right-0 bg-white border border-gray-300 rounded-lg shadow-lg w-full z-10">

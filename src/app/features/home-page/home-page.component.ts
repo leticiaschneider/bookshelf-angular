@@ -33,6 +33,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadCategories();
+    this.loadStoredBooks();
 
     this.searchQuerySubscription = this.bookService.searchQuery$
       .pipe(
@@ -62,6 +63,13 @@ export class HomePageComponent implements OnInit, OnDestroy {
         this.booksByCategory[category.name] = data.items || [];
       });
     });
+  }
+
+  loadStoredBooks(): void {
+    if (typeof window !== 'undefined') {
+      const storedBooks = JSON.parse(localStorage.getItem('storedBooks') || '[]');
+      // this.booksByCategory['My Library'] = storedBooks;
+    }
   }
 
   toggleDropdown(event: MouseEvent) {
