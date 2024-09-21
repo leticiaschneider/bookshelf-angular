@@ -16,6 +16,15 @@ export class BookItemComponent {
   dropdownOpen = false;
   selectedOption: string | null = null;
 
+  colorMapping: { [key: string]: { light: string, dark: string } } = {
+    'Read': { light: '#FDE68A', dark: '#CA8A04' },
+    'Reading': { light: '#BFDBFE', dark: '#1D4ED8' },
+    'Want to Read': { light: '#FECACA', dark: '#DC2626' },
+    'Rereading': { light: '#DDD6FE', dark: '#6B21A8' },
+    'Abandoned': { light: '#FECACA', dark: '#B91C1C' },
+    'Wishlist': { light: '#FED7E2', dark: '#DB2777' }
+  };
+  
   ngOnInit() {
     if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
       const storedBooks = JSON.parse(localStorage.getItem('storedBooks') || '[]');
