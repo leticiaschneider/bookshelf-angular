@@ -71,20 +71,4 @@ export class HomePageComponent implements OnInit, OnDestroy {
       // this.booksByCategory['My Library'] = storedBooks;
     }
   }
-
-  toggleDropdown(event: MouseEvent) {
-    event.stopPropagation();
-    this.dropdownOpen = !this.dropdownOpen;
-    document.addEventListener('click', this.closeDropdown);
-  }
-
-  closeDropdown = () => {
-    this.dropdownOpen = false;
-    document.removeEventListener('click', this.closeDropdown);
-  }
-
-  selectOption(option: string) {
-    console.log('Selected:', option);
-    this.dropdownOpen = false;
-  }
 }
