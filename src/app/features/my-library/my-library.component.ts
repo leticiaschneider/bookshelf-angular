@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './my-library.component.scss'
 })
 export class MyLibraryComponent implements OnInit {
-
+  selectedOption: string = 'All';
   bookList: any[] = [];
 
   ngOnInit(): void {
@@ -26,5 +26,9 @@ export class MyLibraryComponent implements OnInit {
         // console.log('livroooss>: ', JSON.stringify(this.bookList, null, 2));
       }
     }
+  }
+
+  selectOption(option: string) {
+    this.selectedOption = option;
   }
 }

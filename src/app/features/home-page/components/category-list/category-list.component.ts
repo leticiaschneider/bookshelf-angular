@@ -12,5 +12,4 @@ import { BookItemComponent } from '../book-item/book-item.component';
 export class CategoryListComponent {
   @Input() categoryName!: string;
   @Input() books: any[] = [];
-  @Input() dropdownOptions: string[] = [];
 }

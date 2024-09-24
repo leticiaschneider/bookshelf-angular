@@ -22,9 +22,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   booksByCategory: { [key: string]: any[] } = {};
 
-  dropdownOpen = false;
-  dropdownOptions = ['Read', 'Reading', 'Want to Read', 'Rereading', 'Abandoned', 'Wishlist'];
-
   private searchQuerySubscription: Subscription = new Subscription;
   searchQuery: string = '';
   searchResults: any[] = [];

@@ -6,8 +6,7 @@
 
         <div class="book-list grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 gap-y-20 justify-items-center">
             <app-book-item *ngFor="let book of searchResults"
-                           [book]="book"
-                           [dropdownOptions]="dropdownOptions">
+                           [book]="book">
             </app-book-item>
         </div>
     </div>
@@ -15,8 +14,7 @@
     <div *ngIf="!searchQuery || searchResults.length === 0" class="categories-section my-12">
         <app-category-list *ngFor="let category of categories"
                            [categoryName]="category.name"
-                           [books]="booksByCategory[category.name]"
-                           [dropdownOptions]="dropdownOptions">
+                           [books]="booksByCategory[category.name]">
         </app-category-list>
     </div>
 </div>
