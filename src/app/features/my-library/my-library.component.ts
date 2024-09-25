@@ -10,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyLibraryComponent implements OnInit {
   selectedOption: string = 'All';
+  dropdownOptions: string[] = ['All', 'Read', 'Reading', 'Want to Read', 'Rereading', 'Abandoned'];
+
   bookList: any[] = [];
 
   ngOnInit(): void {
@@ -22,8 +24,6 @@ export class MyLibraryComponent implements OnInit {
       if (storedBooks) {
         this.bookList = JSON.parse(storedBooks);
         this.bookList.forEach(book => console.log('Book: ', book));
-
-        // console.log('livroooss>: ', JSON.stringify(this.bookList, null, 2));
       }
     }
   }
