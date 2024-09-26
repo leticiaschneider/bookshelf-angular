@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { LanguagePipe } from '../../shared/pipes/language.pipe';
 
 @Component({
   selector: 'app-my-library',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LanguagePipe],
   templateUrl: './my-library.component.html',
   styleUrl: './my-library.component.scss'
 })
