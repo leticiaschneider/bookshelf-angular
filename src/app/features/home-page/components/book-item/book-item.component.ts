@@ -10,7 +10,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class BookItemComponent {
   @Input() book: any;
-  @Input() dropdownOptions: string[] = [];
+  @Input() dropdownOptions: string[] = ['Read', 'Reading', 'Want to Read', 'Rereading', 'Abandoned', 'Wishlist'];
   @Output() optionSelected = new EventEmitter<string>();
 
   dropdownOpen = false;
@@ -36,6 +36,7 @@ export class BookItemComponent {
   }
 
   toggleDropdown(event: MouseEvent) {
+    console.log("lele");
     event.stopPropagation();
     this.dropdownOpen = !this.dropdownOpen;
     document.addEventListener('click', this.closeDropdown);
