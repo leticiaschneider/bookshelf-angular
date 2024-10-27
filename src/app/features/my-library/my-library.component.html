@@ -24,7 +24,6 @@
                     <th class="py-3 px-6 text-left">Publication Date</th>
                     <th class="py-3 px-6 text-left">Pages</th>
                     <th class="py-3 px-6 text-left">Language</th>
-                    <!-- <th class="py-3 px-6 text-left">Rating</th> -->
                     <th class="py-3 px-6 text-center">Actions</th>
                 </tr>
             </thead>
@@ -36,11 +35,7 @@
                     <td class="py-3 px-6 text-left">{{ book.publishedDate | date : 'MM/dd/yyyy' }}</td>
                     <td class="py-3 px-6 text-left">{{ book.pageCount }}</td>
                     <td class="py-3 px-6 text-left">{{ book.language | language }}</td>
-                    <!-- <td class="py-3 px-6 text-left">{{ book.rating }}</td> -->
                     <td class="py-3 px-6 text-center">
-                        <a class="text-gray-400 hover:text-gray-800  mx-2">
-                            <i class="material-icons-outlined text-base">edit</i>
-                        </a>
                         <a class="text-gray-400 hover:text-gray-800  ml-2" (click)="openModal(book)">
                             <i class="material-icons-round text-base">delete</i>
                         </a>
