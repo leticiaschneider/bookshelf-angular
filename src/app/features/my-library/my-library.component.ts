@@ -14,6 +14,7 @@ export class MyLibraryComponent implements OnInit {
   dropdownOptions: string[] = ['All', 'Read', 'Reading', 'Want to Read', 'Rereading', 'Abandoned'];
 
   bookList: any[] = [];
+  filteredBookList: any[] = [];
   showModal: boolean = false;
   bookToDelete: any = null;
 
@@ -26,13 +27,19 @@ export class MyLibraryComponent implements OnInit {
       const storedBooks = localStorage.getItem('storedBooks');
       if (storedBooks) {
         this.bookList = JSON.parse(storedBooks);
-        this.bookList.forEach(book => console.log('Book: ', book));
+        this.filteredBookList = [...this.bookList];
       }
     }
   }
 
   selectOption(option: string) {
     this.selectedOption = option;
+
+    if (option === 'All') {
+      this.filteredBookList = [...this.bookList];
+    } else {
+      this.filteredBookList = this.bookList.filter(book => book.status === option);
+    }
   }
 
   openModal(book: any) {
