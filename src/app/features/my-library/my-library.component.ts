@@ -27,7 +27,7 @@ export class MyLibraryComponent implements OnInit {
       const storedBooks = localStorage.getItem('storedBooks');
       if (storedBooks) {
         this.bookList = JSON.parse(storedBooks);
-        this.filteredBookList = [...this.bookList];
+        this.bookList.forEach(book => console.log('Book: ', book));
       }
     }
   }
@@ -36,7 +36,7 @@ export class MyLibraryComponent implements OnInit {
     this.selectedOption = option;
 
     if (option === 'All') {
-      this.filteredBookList = [...this.bookList];
+      this.filteredBookList = [...this.bookList]; // Mostra todos os livros
     } else {
       this.filteredBookList = this.bookList.filter(book => book.status === option);
     }
