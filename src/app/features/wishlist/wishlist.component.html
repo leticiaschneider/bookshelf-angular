@@ -1,1 +1,22 @@
-<p>wishlist works!</p>
+<div class="container py-10" [class.h-screen]="wishlist.length < 3" [class.pb-44]="wishlist.length < 6">
+    <h1 class="text-xl font-bold mb-5 text-gray-800">Wishlist</h1>
+
+    <div *ngIf="wishlist.length === 0" class="text-center text-gray-600 bg-white rounded p-5">
+        <p>Your wishlist is empty. Wish some books to get started!</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+        <div *ngFor="let book of wishlist" class="border rounded-lg shadow-md p-4 bg-white relative">
+            <img [src]="book.imageLinks?.thumbnail || 'assets/images/placeholder.png'" alt="{{ book.title }}"
+                class="book-cover w-48 h-64 object-cover shadow-lg mx-auto mb-4">
+
+            <h2 class="font-bold text-lg">{{ book.title }}</h2>
+            <p class="text-sm text-gray-600">Author: {{ book.authors?.join(', ') || 'Unknown Author' }}</p>
+            <p class="text-sm text-gray-600">Genre: {{ book.categories?.join(', ') || 'No Category' }}</p>
+
+            <button class="absolute top-2 right-2 text-red-500 hover:text-red-700" (click)="removeFromWishlist(book)">
+                <i class="material-icons-round text-2xl">favorite</i>
+            </button>
+        </div>
+    </div>
+</div>
