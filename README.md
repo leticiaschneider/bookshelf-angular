@@ -1,27 +1,24 @@
-# Bookshelf
+# 📋 Angular Bookshelf App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+A bookshelf application built with Angular, designed to help you manage and organize your book collection effortlessly.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Personal Library Management**: Add, edit, and organize your books with detailed information such as title, author, genre, and more.
+- **Wishlist**: Save books to your wishlist and easily manage them with a favorite toggle button.
+- **Search and Filter**: Search for books or filter by status like Read, Reading, Want to Read, Rereading, and Abandoned.
+- **Book Details**: View detailed information about each book, including its cover image, authors, genre, and language.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+1. Clone the repository: `git clone https://github.com/leticiaschneider/bookshelf-angular.git`
+2. Navigate to the project folder: `cd bookshelf-angular`
+3. Install dependencies: `npm install`
+4. Run the app: `ng serve`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Visit `http://localhost:4200/` in your browser to see the app in action.
 
-## Running unit tests
+## ✨ Contact
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Letícia Araújo Schneider - leticia.schneider@gmail.com
